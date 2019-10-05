@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opcion">
+        <item>Seleccione la clasificacion</item>
+        <item>Reptiles</item>
+        <item>Acuaticos</item>
+        <item>Terrestres</item>
+        <item>Aereos</item>
+    </string-array>
+    <string-array name="o0">
+        <item>No has seleccionado clasificacion</item>
+    </string-array>
+    <string-array name="o1">
+        <item>Seleccione Especie</item>
+        <item>Cocodrilo</item>
+        <item>Serpiente</item>
+        <item>Tortuga</item>
+        <item>Iguana</item>
+    </string-array>
+    <string-array name="o2">
+        <item>Seleccione Especie</item>
+        <item>Delfin</item>
+        <item>Tiburon</item>
+        <item>Ballena</item>
+        <item>Mantarralla</item>
+    </string-array>
+    <string-array name="o3">
+        <item>Seleccione Especie</item>
+        <item>Elefante</item>
+        <item>Cobra</item>
+        <item>Tigre</item>
+        <item>Jirafa</item>
+    </string-array>
+    <string-array name="o4">
+        <item>Seleccione Especie</item>
+        <item>Halcon</item>
+        <item>Aguila</item>
+        <item>Buho</item>
+        <item>Zopilote</item>
+    </string-array>
+    <string-array name="oX">
+        <item>Seleccione Genero</item>
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
+</resources>
