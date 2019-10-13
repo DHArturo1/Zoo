@@ -1,4 +1,4 @@
-package com.example.zoo;
+package com.example.zoo.BaseDatos;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,12 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.Editable;
 import android.util.Log;
 
+import com.example.zoo.BaseDatos.sql;
+
 import java.util.ArrayList;
 
 public class sqlite {
 
     //trabajar con la informacion de la BD
-    private sql sql;
+    private com.example.zoo.BaseDatos.sql sql;
     private SQLiteDatabase db;
 
     public sqlite (Context context){

@@ -29,6 +29,6 @@
     <string name="s_modificarA">Modificacion de datos</string>
     <string name="s_eliminarA">Eliminacion de datos</string>
 
-    <number name="s_numero">000</number>
+    <string name="s_numero">000</string>
 
 </resources>

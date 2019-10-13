@@ -1,6 +1,5 @@
 package com.example.zoo.ui.crear;
 
-import android.database.sqlite.SQLiteAbortException;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -19,7 +19,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.zoo.R;
-import com.example.zoo.sqlite;
+import com.example.zoo.BaseDatos.sqlite;
 
 public class CrearFragment extends Fragment {
 
@@ -28,9 +28,9 @@ public class CrearFragment extends Fragment {
 
     Spinner clasificacion, sexo, especie;
     EditText name, habitat, food, date_on, id_animal;
-    Button btnlimpiar, btncancelar;
+    Button btnlimpiar, btnguardar;
     String a, b, c;
-    public com.example.zoo.sqlite sqlite;
+    public sqlite sqlite;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class CrearFragment extends Fragment {
         food = root.findViewById(R.id.ET5_FM1_ALIMENTACION);
 
         btnlimpiar = root.findViewById(R.id.BT1_FM1_LIMPIAR);
-        btncancelar = root.findViewById(R.id.BT1_FM1_GUARDAR);
+        btnguardar = root.findViewById(R.id.BT1_FM1_GUARDAR);
 
         sqlite = new sqlite(getContext());
         sqlite.openDB();
@@ -68,9 +68,9 @@ public class CrearFragment extends Fragment {
         clasificacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String opc = String.valueOf(clasificacion.getSelectedItemId());
-                int op = Integer.parseInt(opc);
-                System.out.println(opc);
+                String opcion = String.valueOf(clasificacion.getSelectedItemId());
+                int op = Integer.parseInt(opcion);
+                System.out.println(opcion);
                 if(op == 0){
 
                 }
@@ -78,12 +78,30 @@ public class CrearFragment extends Fragment {
                 if(op == 1) {
                     final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.o1, android.R.layout.simple_spinner_item);
                     especie.setAdapter(adapter1);
-                    a = adapter.getItem(1).toString();
+                    a=adapter.getItem(1).toString();
                     especie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                            String opc2 = String.valueOf(especie.getSelectedItemId());
+                            String opcion = String.valueOf(especie.getSelectedItemId());
+                            int op = Integer.parseInt(opcion);
+                            System.out.println(opcion);
+                            if (op == 0){
+
+                            }
+
+                            if (op == 1){
+                                b = adapter1.getItem(1).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 2){
+                                b = adapter1.getItem(2).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 3){
+                                b = adapter1.getItem(3).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 4){
+                                b = adapter1.getItem(4).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override
@@ -91,12 +109,176 @@ public class CrearFragment extends Fragment {
 
                         }
                     });
-                }
+                }// Seleccion 1
+                else if(op == 2) {
+                    final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.o2, android.R.layout.simple_spinner_item);
+                    especie.setAdapter(adapter1);
+                    a=adapter.getItem(2).toString();
+                    especie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            String opcion = String.valueOf(especie.getSelectedItemId());
+                            int op = Integer.parseInt(opcion);
+                            System.out.println(opcion);
+                            if (op == 0){
+
+                            }
+
+                            if (op == 1){
+                                b = adapter1.getItem(1).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 2){
+                                b = adapter1.getItem(2).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 3){
+                                b = adapter1.getItem(3).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 4){
+                                b = adapter1.getItem(4).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }//Seleccion 2
+                else if(op == 3) {
+                    final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.o3, android.R.layout.simple_spinner_item);
+                    especie.setAdapter(adapter1);
+                    a=adapter.getItem(3).toString();
+                    especie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            String opcion = String.valueOf(especie.getSelectedItemId());
+                            int op = Integer.parseInt(opcion);
+                            System.out.println(opcion);
+                            if (op == 0){
+
+                            }
+
+                            if (op == 1){
+                                b = adapter1.getItem(1).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 2){
+                                b = adapter1.getItem(2).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 3){
+                                b = adapter1.getItem(3).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 4){
+                                b = adapter1.getItem(4).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }//Seleccion 3
+                else if(op == 4) {
+                    final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.o4, android.R.layout.simple_spinner_item);
+                    especie.setAdapter(adapter1);
+                    a=adapter.getItem(4).toString();
+                    especie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            String opcion = String.valueOf(especie.getSelectedItemId());
+                            int op = Integer.parseInt(opcion);
+                            System.out.println(opcion);
+                            if (op == 0){
+
+                            }
+
+                            if (op == 1){
+                                b = adapter1.getItem(1).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 2){
+                                b = adapter1.getItem(2).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 3){
+                                b = adapter1.getItem(3).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            } else if (op == 4){
+                                b = adapter1.getItem(4).toString();
+                                Toast.makeText(getContext(), a+" "+b, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }//Seleccion 4
+
+                final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                        getContext(), R.array.oX, android.R.layout.simple_spinner_item
+                );
+                sexo.setAdapter(adapter2);
+                sexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        String opcion = String.valueOf(sexo.getSelectedItemId());
+                        int op = Integer.parseInt(opcion);
+                        System.out.println(opcion);
+                        if (op == 0){
+                            c = "MACHO";
+                        }else if (op == 1){
+                            c = "HEMBRA";
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        btnguardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!id_animal.getText().toString().equals("") &&
+                        !name.getText().toString().equals("") &&
+                        !habitat.getText().toString().equals("") &&
+                        !food.getText().toString().equals("")){
+                    Toast.makeText(getContext(), a+" "+b+
+                            " "+name.getText().toString().toUpperCase()+" "+
+                            " "+c+
+                            " "+date_on.getText().toString()+" "+
+                            habitat.getText().toString().toUpperCase()+" "+
+                            food.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                    if (sqlite.addReg(Integer.parseInt(id_animal.getText().toString())
+                            , a, b, name.getText().toString().toUpperCase(),c,date_on.getText().toString(),
+                            habitat.getText().toString().toUpperCase(),
+                            food.getText().toString().toUpperCase())){
+                        Toast.makeText(getContext(), "Registro añadido", Toast.LENGTH_SHORT).show();
+                        id_animal.setText("");
+                        name.setText("");
+                        date_on.setText("");
+                        habitat.setText("");
+                        food.setText("");
+                        especie.setId(0);
+                        clasificacion.setId(0);
+                        sexo.setId(0);
+                    } else {
+                        Toast.makeText(getContext(),
+                                "Error, Compruebe que los datos sean correctos", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Error, no puede haber campos vacios", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
